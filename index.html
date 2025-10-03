@@ -24,8 +24,10 @@
         <section id="hero" class="sect">
             <div class="container poppins">
                 <img class="profile" src="./components/assets/profile.jpg" alt="Profile picture"/>
-                <h1>Where logic meets imagination, <br> that’s where <span class="highlight">I code.</span></h1>
-                <p>Passionate full-stack web developer with hands-on experience across diverse projects, specializing in both frontend and backend development. </p>
+                <div class="h-text">
+                    <h1>Where logic meets imagination, <br> that’s where <span class="highlight">I code.</span></h1>
+                    <p>Passionate full-stack web developer with hands-on experience across diverse projects, specializing in both frontend and backend development. </p>
+                </div>
                 <div class="btn-cont">
                     <button class="w-btn">Get In Touch</button>
                     <button class="b-btn">Download CV</button>
@@ -45,18 +47,6 @@
         <section id="projects" class="sect inter">
             <h2>PROJECTS</h2>
             <div class="proj-list">
-                <div class="proj-cont">
-                    <img class="proj-img" src="./components/assets/thumbnail-p.jpg" alt="thumbnail"/>
-                    <div class="t-cont">
-                        <div class="txt">
-                            <p>CLICK HERE TO VISIT</p>
-                            <h3>HOTEL WEB PAGE</h3>
-                        </div>
-                        <a href="https://seventrexzz7.github.io/las-posadas-web/" target="_blank" class="link-i">
-                            <img class="link-img" src="components/assets/arrow-icon.png" alt="link icon"/>
-                        </a>
-                    </div>
-                </div>
                 <div class="proj-cont">
                     <img class="proj-img" src="./components/assets/thumbnail-p.jpg" alt="thumbnail"/>
                     <div class="t-cont">
@@ -95,9 +85,36 @@
                 <p>Creation and development of visual identity, logos, promotional materials, and digital content. Advanced proficiency with design tools, with a focus on interface and visual design for websites and applications.</p>
             </div>
         </section>
+
+        <section id="contact"></section>
         
         <script src="script.js"></script>
     </body>
 
-    <footer></footer>
+    <footer id="footer" class="poppins">
+        <div class="f-cont">
+            <div class="f-about">
+                <h3>About [MORG.DEV]</h3>
+                <p>Passionate full-stack web developer with hands-on experience across diverse projects, specializing in both frontend and backend development.</p>
+            </div>
+            <div class="f-links">
+                <h3>Links</h3>
+                <ul class="l-link">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="f-social">
+                <h3>Take a look!</h3>
+                <div class="s-icon">
+                    <a href=""><img src="" alt=""/></a>
+                </div>
+            </div>
+            <div class="f-bot">
+                <p>&copy; 2025 MORG.DEV. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </html>
