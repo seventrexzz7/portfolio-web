@@ -6,5 +6,5 @@ contactBtn.addEventListener("click", () =>{
 });
 
 cvBtn.addEventListener("click", ()=> {
-    window.open("co", "_blank");
+    window.open("", "_blank");
 })
