@@ -1,153 +1,191 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:wght@300&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:wght@300&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+    overflow-x: hidden;
 }
 
-.navbar{
-    background-color: #1e1e1d;
-    position: fixed;
-    top: 0;
-    padding: 35px 30px;
-    width: 100%;
-
-    color: white;
-    z-index: 1000;
-
-    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.4);
+.navbar {
+  background-color: #1e1e1d;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: clamp(15px, 3vw, 35px) clamp(20px, 5vw, 30px);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.n-cont{
-    max-width: 1000px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+.n-cont {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.logo-nav img{
-    height: 20px;
-    width: auto;
+.logo-nav img {
+  height: clamp(18px, 2vw + 5px, 25px);
+  width: auto;
 }
 
-.n-link{
-    list-style: none;
-    display: flex;
-    gap: 100px;
+.n-link {
+  list-style: none;
+  display: flex;
+  gap: clamp(20px, 5vw, 100px);
+  transition: 0.4s ease;
 }
 
-.n-link a{
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s ease;
-    color: #c0c0c0;
-
+.n-link a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(14px, 1vw + 8px, 16px);
+  transition: 0.3s ease;
+  color: #c0c0c0;
 }
 
-.n-link a:hover{
+.n-link a:hover {
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: absolute;
+  right: clamp(15px, 4vw, 25px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.menu-toggle span {
+  display: block;
+  width: clamp(22px, 4vw, 28px);
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+#hero {
     color: #fff;
 }
 
-#hero{
-    color: #fff;
-}
-
-.sect{
+.sect {
     background-color: #161513;
     width: 100%;
-    padding: 10px 300px;
+    padding: clamp(20px, 5vw, 80px) clamp(15px, 5vw, 300px);
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.profile{
+.profile {
     margin-top: 120px;
     border-radius: 50%;
-    height: 200px;
+    height: clamp(120px, 20vw, 200px);
+    width: clamp(120px, 20vw, 200px);
+    object-fit: cover;
 }
 
-.h-text{
+.h-text {
     max-width: 1200px;
     margin: 0;
     text-align: center;
 }
-.h-text h1{
+
+.h-text h1 {
     width: 100%;
     font-family: "Poppins", sans-serif;
     font-weight: 800;
-    font-size: 60px;
-    padding: 20px 0px;
+    font-size: clamp(32px, 6vw, 60px);
+    padding: clamp(10px, 2vw, 20px) 0;
     text-align: center;
 }
-.h-text p{
+
+.h-text p {
     width: 100%;
-    padding: 0px 100px;
+    padding: 0 clamp(15px, 5vw, 100px);
     font-family: "Poppins", sans-serif;
-    font-size: 30px;
-    font-weight: 100px;
+    font-size: clamp(16px, 2vw, 30px);
+    font-weight: 300;
 }
 
-.highlight{
+.highlight {
     background-image: linear-gradient(#9c35FB, #fe855f);
     color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
 }
 
-.btn-cont{
+.btn-cont {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: 40px;
+    gap: clamp(10px, 2vw, 15px);
+    margin-top: clamp(20px, 4vw, 40px);
+    flex-wrap: wrap;
 }
 
-button{
+button {
     border-radius: 999px;
-    padding: 18px 40px;
-
-    font-size: large;
+    padding: clamp(10px, 1.5vw, 18px) clamp(20px, 4vw, 40px);
+    font-size: clamp(14px, 1.5vw, 18px);
     font-weight: 600;
     font-family: "Poppins", sans-serif;
+    cursor: pointer;
 }
 
-.w-btn{
+.w-btn {
     border: none;
 }
 
-.b-btn{
+.b-btn {
     color: #fff;
     border: 3px solid #fff;
     background-color: #1e1e1d;
 }
 
-.tech-cont h3{
+.tech-cont h3 {
     color: #c5c5c5;
-    margin-top: 100px;
+    margin-top: clamp(50px, 10vw, 100px);
     font-family: "Poppins", sans-serif;
     letter-spacing: 5px;
-    font-size: x-large;
+    font-size: clamp(18px, 2vw, x-large);
+    text-align: center;
 }
 
-.img-cont{
-    margin-top: 40px;
+.img-cont {
+    margin-top: clamp(20px, 5vw, 40px);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: clamp(20px, 5vw, 70px);
+    flex-wrap: wrap;
 }
-.tech-cont img{
-    height: 50px;
+
+.tech-cont img {
+    height: clamp(30px, 5vw, 50px);
 }
 
 #projects{
@@ -358,4 +396,46 @@ button{
   margin-top: 30px;
   font-size: 14px;
   color: #777777;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .n-link {
+    position: fixed;
+    top: clamp(60px, 8vw, 80px);
+    right: -100%;
+    flex-direction: column;
+    background-color: #1e1e1d;
+    width: 100%;
+    height: calc(100vh - clamp(60px, 8vw, 80px));
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 6vw, 40px);
+    transition: right 0.4s ease;
+  }
+
+  .n-link.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .menu-toggle {
+    right: 15px;
+  }
+
+  .logo-nav img {
+    height: 18px;
+  }
+
+  .n-link a {
+    font-size: 1rem;
+  }
 }
