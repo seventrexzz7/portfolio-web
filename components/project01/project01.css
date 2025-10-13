@@ -11,8 +11,14 @@ html {
   scroll-behavior: smooth;
 }
 html, body {
-    overflow-x: hidden;
-    background-color: #161513;
+  overflow-x: hidden;
+}
+
+body{
+  margin: 0;
+  padding-top: 1px;
+  background-color: #161513;
+  overflow: hidden;
 }
 
 .navbar {
@@ -84,241 +90,198 @@ html, body {
   transition: 0.3s;
 }
 
-#hero {
-  color: #fff;
-}
-
-.sect {
-    background-color: #161513;
-    width: 100%;
-    padding-top: 40px;
-    margin-bottom: 50px;
-}
+/******************************************/
+/*CONTAINER is applied to all the sections*/
+/*Contains color and column organization  */
+/******************************************/
+/*Asign POPPINS or INTER depending on your*/
+/*priorities                              */
+/******************************************/
+/*Asign .width to adjust the same witdh   */
+/*for all the sections. That's because if */
+/*you apply it to the container, it creat-*/
+/*es white spaces of the body.            */
+/******************************************/
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  background-color: #161513;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.width{
+  max-width: 1200px;
 }
 
-.profile {
-    margin-top: 120px;
-    border-radius: 50%;
-    height: clamp(120px, 20vw, 200px);
-    width: clamp(120px, 20vw, 200px);
-    object-fit: cover;
+.poppins{
+  font-family: "Poppins", sans-serif;
 }
 
-.h-text {
-    max-width: 1200px;
-    margin: 0;
-    text-align: center;
+.inter{
+  font-family: "Inter", sans-serif;
+}
+
+/******************************************/
+/*intCont helps with the organization of  */
+/*the img and w1 which contains the title */
+/*buttons and technology used             */
+/******************************************/
+#inProj {
+  color: #fff;
+  margin-top: 100px;
+}
+
+.intCont{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.w1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .h-text h1 {
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-size: clamp(32px, 6vw, 60px);
-    padding: clamp(10px, 2vw, 20px) 0;
-    text-align: center;
+  margin-top: 50px;
+  width: 100%;
+  
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
 }
 
 .h-text p {
-    width: 100%;
-    padding: 0 clamp(15px, 5vw, 100px);
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(16px, 2vw, 30px);
-    font-weight: 300;
+  width: 90%;
+  padding:0;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-.highlight {
-    background-image: linear-gradient(#9c35FB, #fe855f);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+.hero-img{
+  margin-top: 30px;
+  height: 400px;
+  border-radius: 20px;
 }
 
 .btn-cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(10px, 2vw, 15px);
-    margin-top: clamp(20px, 4vw, 40px);
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 2vw, 15px);
+  margin-top: clamp(20px, 4vw, 40px);
+  flex-wrap: wrap;
 }
 
 button {
-    border-radius: 999px;
-    padding: clamp(10px, 1.5vw, 18px) clamp(20px, 4vw, 40px);
-    font-size: clamp(14px, 1.5vw, 18px);
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
+  border-radius: 999px;
+  padding: clamp(10px, 1.5vw, 18px) clamp(20px, 4vw, 40px);
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 .w-btn {
-    border: none;
+  border: none;
 }
 
 .b-btn {
-    color: #fff;
-    border: 3px solid #fff;
-    background-color: #1e1e1d;
+  color: #fff;
+  border: 3px solid #fff;
+  background-color: #1e1e1d;
 }
+
 .tech-cont h3 {
-    color: #c5c5c5;
-    margin-top: clamp(50px, 10vw, 100px);
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 5px;
-    font-size: clamp(18px, 2vw, x-large);
-    text-align: center;
+  color: #c5c5c5;
+  margin-top: 25px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 5px;
+  font-size: clamp(18px, 2vw, x-large);
+  text-align: center;
 }
 
 .img-cont {
-    margin-top: clamp(20px, 5vw, 40px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(20px, 5vw, 70px);
-    flex-wrap: wrap;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 5vw, 70px);
+  flex-wrap: wrap;
 }
 
 .tech-cont img {
-    height: clamp(30px, 5vw, 50px);
+  height: clamp(30px, 5vw, 50px);
 }
 
-#projects{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/******************************************/
+
+#abProj{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#projects h2{
+#abProj h2{
+  margin-top: 70px;
 
   background-image: linear-gradient(#fe855f, #dd552a);
   color: transparent;
   background-clip: text;
 
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 900;
   box-shadow: 5px black;
 }
 
-.proj-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: center;
-    gap: 50px;
+.p-d{
+  margin-top: 30px;
+  font-size: 20px;
+  color: #b1b6c9;
+  text-align: justify;
 }
 
-.proj-cont{
-    width: 500px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.w2 h3{
+  text-align: left;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 900;
+  box-shadow: 5px black;
+}
+/******************************************/
+/*I've created a "square" for special mes-*/
+/*sages                                   */
+/******************************************/
+.sqr{
+  margin-top: 40px;
+  border-radius: 20px;
+  border: 1px solid #fe855f;
+  background-color: #2a2a2a;
+  padding: 10px 10px;
 }
 
-.proj-img{
-    display: block;
-    height: 300px;
-    width: 100%;
-    border-radius: 40px 40px 0 0;
+.sqr p{
+  font-size: 20px;
+  color: #b1b6c9;
+  padding: 15px;
 }
 
-.t-cont{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-
-    color: #fff;
-    background-color: #2a2a2a;
-    width: 100%;
-    padding: 20px;
-    padding-left: 40px;
-    border-radius: 0 0 40px 40px;
-}
-
-.txt{
-    display: flex;
-    flex-direction: column;
-}
-
-.txt p{
-    margin-bottom: 7px;
-    font-weight: 700;
-}
-
-.txt h3{
-    font-size: x-large;
-    font-weight: 900;
-}
-.link-i
-
-.link-img{
-    height: 20px;
-    transition: 0.3s ease;
-}
-
-.link-img:hover{
-    transform: scale(1.2);
-}
-
-#experience{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#experience h1{
-    background-image: linear-gradient(#70a7cc, rgb(32, 93, 150));
-    color: transparent;
-    background-clip: text;
-
-    font-size: 60px;
-    font-weight: 900;
-    box-shadow: 5px black;
-}
-.exp-cont{
-    margin-top: 50px;
-    margin-bottom: 35px;
-    max-width: 1200px;
-}
-
-.st-row{
-    display: flex;
-    justify-content: space-between;
-}
-.n1{
-    display: flex;
-    flex-direction: center;
-    margin-bottom: 25px;
-}
-.n1 h3{
-    font-size: xx-large;
-    color: #fff;
-}
-
-.exp-cont p{
-    font-size: x-large;
-    color: #b1b6c9;
-}
-
-.st-row img{
-    height: 40px;
-    padding-right: 25px;
-}
-
-.poppins{
-    font-family: "Poppins", sans-serif;
-}
-
-.inter{
-    font-family: "Inter", sans-serif;
-}
 
 #footer {
   background-color: #111;
