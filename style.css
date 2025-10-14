@@ -285,7 +285,7 @@ button {
 .exp-cont{
     margin-top: 50px;
     margin-bottom: 35px;
-    max-width: 1200px;
+    width: 80%;
 }
 
 .st-row{
@@ -331,9 +331,9 @@ button {
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 40px;
-  max-width: 1200px;
+  width: 80%;
   margin: auto;
 }
 
@@ -397,6 +397,113 @@ button {
   color: #777777;
 }
 
+
+@media (max-width: 1024px) {
+  .h-text{
+    padding: 20px;
+  }
+  #projects h2{
+    font-size: 5vh;
+  }
+  #experience .exp-cont {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  #experience .st-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  #experience .n1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+  }
+
+  #experience .n1 h3 {
+    font-size: 2rem; /* un poco más pequeño para móviles */
+  }
+
+  #experience .st-row > p {
+    font-size: 1.2rem;
+    color: #ccc; /* opcional para diferenciar fecha */
+  }
+  #footer{
+    padding: 0 100px;
+  }
+
+  .proj-cont{
+    width: 80%;
+  }
+
+  .proj-img{
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #footer {
+    padding: 40px 15px 15px;
+    text-align: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    gap: 30px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section img {
+    height: 25px;
+    margin-bottom: 15px;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+
+  .socials {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .socials img {
+    height: 28px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -419,6 +526,61 @@ button {
   .n-link.active {
     right: 0;
   }
+
+  #footer {
+    padding: 40px 15px 15px;
+    text-align: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    gap: 30px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section img {
+    height: 25px;
+    margin-bottom: 15px;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+
+  .socials {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .socials img {
+    height: 28px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -439,7 +601,7 @@ button {
   }
 
   #experience .exp-cont {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -472,38 +634,59 @@ button {
     font-size: 0.85rem; /* texto largo más pequeño */
     line-height: 1.3;
   }
-
-}
-
-@media (max-width: 1024px) {
-  .h-text{
-    padding: 20px;
+  #footer {
+    padding: 40px 15px 15px;
+    text-align: center;
   }
 
-  .exp-cont{
-    padding: 0 10%;
-  }
-
-  .n1 h3{
-    padding-right: 0%;
-  }
-  #projects h2{
-    font-size: 5vh;
-  }
-  #experience h1{
-    font-size: 5vh;
-  }
-
-  #footer{
-    padding: 0 100px;
-  }
-
-  .proj-cont{
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
+    gap: 30px;
   }
 
-  .proj-img{
-    height: 100%;
-    object-fit: cover;
+  .footer-section {
+    width: 100%;
   }
+
+  .footer-section img {
+    height: 25px;
+    margin-bottom: 15px;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+
+  .socials {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .socials img {
+    height: 28px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
 }
