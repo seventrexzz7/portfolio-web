@@ -305,6 +305,7 @@ button {
 .exp-cont p{
     font-size: x-large;
     color: #b1b6c9;
+    text-align: justify;
 }
 
 .st-row img{
@@ -435,5 +436,74 @@ button {
 
   .n-link a {
     font-size: 1rem;
+  }
+
+  #experience .exp-cont {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  #experience .st-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  #experience .n1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+  }
+
+  #experience .n1 h3 {
+    font-size: 1rem; /* un poco más pequeño para móviles */
+  }
+
+  #experience .st-row > p {
+    font-size: 0.9rem;
+    color: #ccc; /* opcional para diferenciar fecha */
+  }
+
+  #experience .exp-cont > p {
+    font-size: 0.85rem; /* texto largo más pequeño */
+    line-height: 1.3;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .h-text{
+    padding: 20px;
+  }
+
+  .exp-cont{
+    padding: 0 10%;
+  }
+
+  .n1 h3{
+    padding-right: 0%;
+  }
+  #projects h2{
+    font-size: 5vh;
+  }
+  #experience h1{
+    font-size: 5vh;
+  }
+
+  #footer{
+    padding: 0 100px;
+  }
+
+  .proj-cont{
+    width: 80%;
+  }
+
+  .proj-img{
+    height: 100%;
+    object-fit: cover;
   }
 }
