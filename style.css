@@ -505,6 +505,11 @@ button {
 }
 
 @media (max-width: 768px) {
+
+  .profile {
+    margin-top: 50px;
+  }
+  
   .menu-toggle {
     display: flex;
   }
@@ -584,6 +589,7 @@ button {
 }
 
 @media (max-width: 480px) {
+
   .navbar {
     padding: 12px 15px;
   }
