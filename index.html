@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Morg.dev - Full-stack Developer Portfolio</title>
+        <title data-es="Morg.dev - Web Developer Portfolio">Morg.dev - Web Developer Portfolio</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -11,7 +11,7 @@
             <nav class="navbar inter">
                 <div class="n-cont">
                     <div class="logo-nav">
-                        <a href=""><img src="./components/assets/logo-w.png" alt=""/></a>
+                        <a href=""><img src="./components/assets/logo-w.png" id="logoImg" alt="logo"/></a>
                     </div>
                     <div class="menu-toggle" id="menu-toggle">
                         <span></span>
@@ -19,15 +19,18 @@
                         <span></span>
                     </div>
                     <ul class="n-link">
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#footer">Contact</a></li>
+                        <li ><a href="#hero" data-es="Inicio">Home</a></li>
+                        <li ><a href="#projects" data-es="Proyectos">Projects</a></li>
+                        <li ><a href="#experience" data-es="Experiencia">Experience</a></li>
+                        <li ><a href="#footer" data-es="Contacto">Contact</a></li>
                     </ul>
                     <div class="lang-container">
                         <button id="langBtn" class="lang-btn" title="Cambiar idioma">
                             <img src="/components/assets/translate-icon.png" alt="Idioma" />
                         </button>
+                    </div>
+                    <div class="controls">
+                        <button id="themeBtn">🌙</button>
                     </div>
                 </div>
             </nav>
@@ -37,36 +40,36 @@
             <div class="container poppins">
                 <img class="profile" src="./components/assets/profile.jpg" alt="Profile picture"/>
                 <div class="h-text">
-                    <h1>Where logic meets imagination, <br> that’s where <span class="highlight">I code.</span></h1>
-                    <p>Hi! I am <span class="highlight">Mar</span>, a passionate web developer with hands-on experience across diverse projects, specializing in both frontend and backend development. </p>
+                    <h1 id="hero-title" data-es="Donde la lógica se encuentra con la imaginación, <br> ahí es donde <span class='highlight'>programo.</span>">Where logic meets imagination, <br> that’s where <span class="highlight">I code.</span></h1>
+                    <p id="hero-desc" data-es="¡Hola! Soy <span class='highlight'>Mar</span>, una desarrolladora web apasionada con experiencia práctica en diversos proyectos, especializada tanto en frontend como en backend.">Hi! I am <span class="highlight">Mar</span>, a passionate web developer with hands-on experience across diverse projects, specializing in both frontend and backend development.</p>
                 </div>
                 <div class="btn-cont">
-                    <button class="w-btn">Get In Touch</button>
+                    <button class="w-btn" data-es="Hablemos!">Get In Touch</button>
                     <a href="/components/assets/Fullstack_CV_Mar.pdf" target="_blank">
-                        <button class="b-btn">Download CV</button>
+                        <button class="b-btn" data-es="Descargar CV">Download CV</button>
                     </a>
                 </div>
                 <div class="tech-cont">
-                    <h3>TECHNOLOGY I USE</h3>
+                    <h3 data-es="TECNOLOGÍA">TECHNOLOGY I USE</h3>
                     <div class="img-cont">
-                        <img src="./components/assets/css-logo.png" alt="css"/>
-                        <img src="./components/assets/html-icon.png" alt="html"/>
-                        <img src="./components/assets/js-logo.png" alt="js"/>
-                        <img src="./components/assets/react-icon.png" alt="react"/>
+                        <img id="cssL" src="./components/assets/css-logo.png" alt="css"/>
+                        <img id="htmlL" src="./components/assets/html-icon.png" alt="html"/>
+                        <img id="jsL" src="./components/assets/js-logo.png" alt="js"/>
+                        <img id="reactL" src="./components/assets/react-icon.png" alt="react"/>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="sect inter">
-            <h2>PROJECTS</h2>
+            <h2 data-es="PROYECTOS">PROJECTS</h2>
             <div class="proj-list">
                 <div class="proj-cont">
                     <img class="proj-img" src="./components/assets/thumbnail-p.jpg" alt="thumbnail"/>
                     <div class="t-cont">
                         <div class="txt">
-                            <p>CLICK HERE TO VISIT</p>
-                            <h3>HOTEL WEB PAGE</h3>
+                            <p data-es="HAZ CLICK PARA VER MÁS">CLICK HERE TO VISIT</p>
+                            <h3 data-es="PÁGINA WEB DEL HOTEL">HOTEL WEB PAGE</h3>
                         </div>
                         <a href="/components/project01/project01.html" target="_blank" class="link-i">
                             <img class="link-img" src="components/assets/arrow-icon.png" alt="link icon"/>
@@ -77,56 +80,62 @@
         </section>
 
         <section id="experience" class="sect poppins">
-            <h1 class="inter">PROFESSIONAL EXPERIENCE</h1>
+            <h1 class="inter" data-es="EXPERIENCIA PROFESIONAL">PROFESSIONAL EXPERIENCE</h1>
             <div class="exp-cont">
                 <div class="st-row">
                     <div class="n1">
                         <img src="components/assets/labster-logo.png" alt="labster"/>
-                        <h3>Technical 3D Atist at Labster</h3>
+                        <h3 data-es="Technical 3D Atist en Labster">Technical 3D Atist at Labster</h3>
                     </div>
-                    <p>October 2021 - December 2022</p>
+                    <p data-es="Octubre 2021 - Diciembre 2022">October 2021 - December 2022</p>
                 </div>
-                <p>Development of scripts and tools to automate production processes, along with the implementation of shaders and visual logic in Unity using node-based programming and C#. Actively collaborated with engineering and art teams in multidisciplinary environments.</p>
+                <p data-es="Desarrollo de scripts y herramientas para automatizar procesos de producción, junto con la implementación de shaders y lógica visual en Unity utilizando programación basada en nodos y C#. Colaboración activa con los equipos de ingeniería y arte en entornos multidisciplinarios.">Development of scripts and tools to automate production processes, along with the implementation of shaders and visual logic in Unity using node-based programming and C#. Actively collaborated with engineering and art teams in multidisciplinary environments.</p>
             </div>
             <div class="exp-cont">
                 <div class="st-row">
                     <div class="n1">
                         <img src="components/assets/nstl-logo.png" alt="nstl"/>
-                        <h3>Graphic Designer at No Spoon Tech Lab</h3>
+                        <h3 data-es="Graphic Designer en No Spoon Tech Lab">Graphic Designer at No Spoon Tech Lab</h3>
                     </div>
-                    <p>April 2021 - June 2021</p>
+                    <p data-es="Abril 2021 - Junio 2021">April 2021 - June 2021</p>
                 </div>
-                <p>Creation and development of visual identity, logos, promotional materials, and digital content. Advanced proficiency with design tools, with a focus on interface and visual design for websites and applications.</p>
+                <p data-es="Creación y desarrollo de identidad visual, logotipos, materiales promocionales y contenido digital. Dominio avanzado de herramientas de diseño, con enfoque en diseño de interfaces y diseño visual para sitios web y aplicaciones.">Creation and development of visual identity, logos, promotional materials, and digital content. Advanced proficiency with design tools, with a focus on interface and visual design for websites and applications.</p>
             </div>
         </section>
 
         <section id="career" class="sect poppins">
-            <h1 class="inter">MY CAREER</h1>
+            <h1 class="inter" data-es="ESTUDIOS">MY CAREER</h1>
             <div class="exp-cont-c">
                 <div class="st-row-c">
                     <div class="n1-c">
                         <img src="components/assets/career-icon.png" alt="career"/>
-                        <h3>Web Application Development at IES Sant Vicent Ferrer</h3>
+                        <div class="n2-c">
+                            <h3 data-es="Desarrollo de Aplicaciones Web en IES Sant Vicent Ferrer">Web Application Development at IES Sant Vicent Ferrer</h3>
+                            <p data-es="Septiembre 2025 - Actualidad">September 2025 - Present</p>
+                        </div>
                     </div>
-                    <p>September 2025 - Present</p>
                 </div>
             </div>
             <div class="exp-cont-c">
                 <div class="st-row-c">
                     <div class="n1-c">
                         <img src="components/assets/career-icon.png" alt="career"/>
-                        <h3>3D Art for AAA Videogames Master at Florida University</h3>
+                        <div class="n2-c">
+                            <h3 data-es="Arte 3D para videojuegos AAA en Florida Universitaria">3D Art for AAA Videogames Master at Florida University</h3>
+                            <p data-es="Septiembre 2021 - Mayo 2022">September 2021 - May 2022</p>
+                        </div>
                     </div>
-                    <p>September 2021 - June 2022</p>
                 </div>
             </div>
             <div class="exp-cont-c">
                 <div class="st-row-c">
                     <div class="n1-c">
                         <img src="components/assets/career-icon.png" alt="career"/>
-                        <h3>3D Animation, Games and Interactive Experiences at Florida University</h3>
+                        <div class="n2-c">
+                            <h3 data-es="Animación 3D, Juegos y Entornos Interactivos en Florida Universitaria">3D Animation, Games and Interactive Environments at Florida University</h3>
+                            <p data-es="Septiembre 2019 - Junio 2021">September 2019 - June 2021</p>
+                        </div>
                     </div>
-                    <p>September 2019 - June 2021</p>
                 </div>
             </div>
         </section>
@@ -138,36 +147,36 @@
         <div class="footer-container">
             <div class="footer-section">
                 <img src="components/assets/logo-w.png" alt="" />
-                <p>Passionate full-stack web developer with hands-on experience across diverse projects, specializing in both frontend and backend development.</p>
+                <p data-es="¡Hola! Soy Mar, una desarrolladora web apasionada con experiencia práctica en diversos proyectos, especializada tanto en frontend como en backend.">Hi! I am Mar, a passionate web developer with hands-on experience across diverse projects, specializing in both frontend and backend development.</p>
             </div>
             
             <div class="footer-section">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#footer">Contact</a></li>
+                    <li data-es="Inicio"><a href="#hero">Home</a></li>
+                    <li data-es="Proyectos"><a href="#projects">Projects</a></li>
+                    <li data-es="Experiencia"><a href="#experience">Experience</a></li>
+                    <li data-es="Contacto"><a href="#footer">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h3>Contact</h3>
+                <h3 data-es="Contacto">Contact</h3>
                 <ul>
                     <li>Email: <a href="mailto:info@misitio.com">contact@morgdev.com</a></li>
                     <li>Tel: <a href="tel:+34123456789">+34 629 62 68 96</a></li>
-                    <li>I'm everywhere :)</li>
+                    <li data-es="Estoy en todos lados :)">I'm everywhere :)</li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h3>Take a look!</h3>
+                <h3 data-es="Échale un vistazo!">Take a look!</h3>
                 <div class="socials">
                     <a href="https://github.com/seventrexzz7" target="_blank"><img src="components/assets/git-logo.png" alt="github"/></a>
                     <a href="#"><img src="components/assets/linkedin-icon.png" alt="github"/></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" data-es="© 2025 MORG.DEV. Todos los derechos reservados.">
             © 2025 MORG.DEV. All rights reserved.
         </div>
     </footer>
