@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.n-link');
+    const nCont = document.querySelector('.n-cont');
+    const menuLinks = document.querySelectorAll('.n-link a');
 
     const langBtn = document.getElementById("langBtn");
     let currentLang = "en";
@@ -56,9 +58,36 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.style.display = 'none';
     });
 
-    toggle.addEventListener('click', () => {
+    /*toggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         toggle.classList.toggle('open');
+    });*/
+    function ajustarMenu() {
+        const headerHeight = document.getElementById('mainHeader').offsetHeight;
+        navLinks.style.top = `${headerHeight}px`;
+        navLinks.style.height = `${window.innerHeight - headerHeight}px`;
+    }
+
+    // Abrir/cerrar menú
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.classList.toggle('open');  // animación hamburguesa
+        ajustarMenu();
+    });
+
+    // Ajustar al redimensionar la ventana
+    window.addEventListener('resize', () => {
+        if (navLinks.classList.contains('active')) {
+            ajustarMenu();
+        }
+    });
+
+    menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Cierra el menú
+        navLinks.classList.remove('active');
+        toggle.classList.remove('open');
+    });
     });
 
     contactBtn.addEventListener("click", () =>{

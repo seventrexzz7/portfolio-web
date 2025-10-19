@@ -763,20 +763,30 @@ button {
   
   .menu-toggle {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 75px;
+    transform: translateY(-50%);
   }
 
   .n-link {
     position: fixed;
-    top: 85px;
-    right: -100%;
+    right: -100%;         /* fuera de la pantalla */
+    top: 0;                /* JS ajustará top dinámicamente */
+    width: 100%;
     flex-direction: column;
     background-color: var(--bg2-color);
-    width: 100%;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     gap: clamp(20px, 6vw, 40px);
     transition: right 0.4s ease;
+    overflow-y: auto;      /* si hay muchos links */
+    z-index: 1500;
   }
 
   .n-link.active {
@@ -840,9 +850,12 @@ button {
 }
 
 @media (max-width: 480px) {
+  .menu-toggle{
+    top: 63px;
+  }
   .theme-switch {
-    width: 40px;   /* más pequeño */
-    height: 20px;  /* proporcional */
+    width: 40px;
+    height: 20px;
   }
 
   .switch::before {
@@ -852,18 +865,11 @@ button {
     bottom: 2px;
   }
 
-  /* Ajustar el desplazamiento al hacer toggle */
   #themeToggle:checked + .switch::before {
-    transform: translateX(20px); /* proporcional al nuevo width */
+    transform: translateX(20px);
   }
   .navbar {
     padding: 12px 15px;
-  }
-
-  .menu-toggle {
-    display: flex;
-    margin-top: 20px;
-    right: 15px;
   }
 
   .logo-nav img {
