@@ -58,10 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.style.display = 'none';
     });
 
-    /*toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        toggle.classList.toggle('open');
-    });*/
     function ajustarMenu() {
         const headerHeight = document.getElementById('mainHeader').offsetHeight;
         navLinks.style.top = `${headerHeight}px`;
@@ -77,17 +73,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ajustar al redimensionar la ventana
     window.addEventListener('resize', () => {
-        if (navLinks.classList.contains('active')) {
+         if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('open');
+
+        // Limpiar los estilos inline aplicados por JS
+        navLinks.style.top = '';
+        navLinks.style.height = '';
+        }else if (navLinks.classList.contains('active')) {
             ajustarMenu();
         }
     });
 
     menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // Cierra el menú
-        navLinks.classList.remove('active');
-        toggle.classList.remove('open');
-    });
+        link.addEventListener('click', () => {
+            // Cierra el menú
+            navLinks.classList.remove('active');
+            toggle.classList.remove('open');
+        });
     });
 
     contactBtn.addEventListener("click", () =>{
