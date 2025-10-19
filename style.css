@@ -620,6 +620,15 @@ button {
 
 
 @media (max-width: 1024px) {
+
+  .tb-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+  }
   .h-text{
     padding: 20px;
   }
@@ -758,12 +767,12 @@ button {
 
   .n-link {
     position: fixed;
-    top: clamp(60px, 8vw, 80px);
+    top: 85px;
     right: -100%;
     flex-direction: column;
-    background-color: #1e1e1d;
+    background-color: var(--bg2-color);
     width: 100%;
-    height: calc(100vh - clamp(60px, 8vw, 80px));
+    height: 100vh;
     justify-content: center;
     align-items: center;
     gap: clamp(20px, 6vw, 40px);
@@ -831,13 +840,21 @@ button {
 }
 
 @media (max-width: 480px) {
-  .tb-cont {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 10px;
+  .theme-switch {
+    width: 40px;   /* más pequeño */
+    height: 20px;  /* proporcional */
+  }
+
+  .switch::before {
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  /* Ajustar el desplazamiento al hacer toggle */
+  #themeToggle:checked + .switch::before {
+    transform: translateX(20px); /* proporcional al nuevo width */
   }
   .navbar {
     padding: 12px 15px;
