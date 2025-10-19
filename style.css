@@ -653,7 +653,6 @@ button {
 
   #experience .st-row > p {
     font-size: 1.2rem;
-    color: #ccc;
   }
 
   #career .exp-cont-c {
@@ -674,9 +673,8 @@ button {
     font-size: 2rem;
   }
 
-  #career .st-row-c > p {
+  #career .st-row-c p {
     font-size: 1.2rem;
-    color: var(--ftc-color);
   }
   #footer{
     padding: 0 100px;
