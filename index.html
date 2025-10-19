@@ -7,12 +7,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
+        <header id="mainHeader">
             <div class="topb">
                 <div class="tb-cont">
                     <div class="lang-container">
                         <button id="langBtn" class="lang-btn" title="Cambiar idioma">
-                            <img src="/components/assets/translate-icon.png" alt="Idioma" />
+                            <img id="translateL" src="/components/assets/translate-icon.png" alt="Idioma" />
                         </button>
                     </div>
                     <div class="theme-switch">
@@ -24,7 +24,7 @@
             <nav class="navbar inter">
                 <div class="n-cont">
                     <div class="logo-nav">
-                        <a href=""><img src="./components/assets/logo-w.png" id="logoImg" alt="logo"/></a>
+                        <a href=""><img class="logoImg" src="./components/assets/logo-w.png" alt="logo"/></a>
                     </div>
                     <div class="menu-toggle" id="menu-toggle">
                         <span></span>
@@ -40,6 +40,10 @@
                 </div>
             </nav>
         </header>
+
+        <div id="nav-tab" class="nav-tab">
+            <div class="tab-shape"></div>
+        </div>
 
         <section id="hero" class="sect">
             <div class="container poppins">
@@ -126,7 +130,7 @@
                     <div class="n1-c">
                         <img class="careerL" src="components/assets/career-icon.png" alt="career"/>
                         <div class="n2-c">
-                            <h3 data-es="Arte 3D para videojuegos AAA en Florida Universitaria">3D Art for AAA Videogames Master at Florida University</h3>
+                            <h3 data-es="Máster en Arte 3D para videojuegos AAA en Florida Universitaria">3D Art for AAA Videogames Master at Florida University</h3>
                             <p data-es="Septiembre 2021 - Mayo 2022">September 2021 - May 2022</p>
                         </div>
                     </div>
@@ -151,7 +155,7 @@
     <footer id="footer" class="footer poppins">
         <div class="footer-container">
             <div class="footer-section">
-                <img src="components/assets/logo-w.png" alt="" />
+                <img class="logoImg" src="components/assets/logo-w.png" alt="logo" />
                 <p data-es="¡Hola! Soy Mar, una desarrolladora web apasionada con experiencia práctica en diversos proyectos, especializada tanto en frontend como en backend.">Hi! I am Mar, a passionate web developer with hands-on experience across diverse projects, specializing in both frontend and backend development.</p>
             </div>
             
@@ -176,8 +180,8 @@
             <div class="footer-section">
                 <h3 data-es="Échale un vistazo!">Take a look!</h3>
                 <div class="socials">
-                    <a href="https://github.com/seventrexzz7" target="_blank"><img src="components/assets/git-logo.png" alt="github"/></a>
-                    <a href="#"><img src="components/assets/linkedin-icon.png" alt="github"/></a>
+                    <a href="https://github.com/seventrexzz7" target="_blank"><img  id="gitL" src="components/assets/git-logo.png" alt="github"/></a>
+                    <a href="#"><img id="linkedinL" src="components/assets/linkedin-icon.png" alt="github"/></a>
                 </div>
             </div>
         </div>

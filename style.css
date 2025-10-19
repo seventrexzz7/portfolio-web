@@ -37,7 +37,6 @@ body.light-mode {
 }
 
 .topb {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -109,7 +108,6 @@ body.light-mode {
 
 .navbar {
   background-color: var(--bg2-color);
-  position: fixed;
   top: 40px;
   width: 100%;
   padding: clamp(15px, 3vw, 35px) clamp(20px, 5vw, 30px);
@@ -197,6 +195,52 @@ body.light-mode {
 
 .lang-btn:hover {
   opacity: 0.8;
+}
+
+#mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.5s ease;
+}
+
+#mainHeader.collapsed {
+  transform: translateY(-90%);
+}
+
+/* Pestañita fija fuera del header */
+.nav-tab {
+  position: fixed;
+  top: 0; /* misma altura que el header */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  cursor: pointer;
+  display: none; /* oculta por defecto */
+  transition: opacity 0.3s ease;
+}
+
+/* Mostrar solo cuando el header está colapsado */
+#mainHeader.collapsed + .nav-tab {
+  display: flex;
+  justify-content: center;
+  top: 0;
+}
+
+.tab-shape {
+  width: 80px;
+  height: 22px;
+  background: var(--bg2-color);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+.tab-shape:hover {
+  background: var(--t2-color);
 }
 
 #hero {
@@ -499,7 +543,7 @@ button {
 }
 
 #footer {
-  background-color: var(--fbkg-color);
+  background-color: var(--bg2-color);
   color: var(--t2-color);
   padding: 50px 20px 20px;
 
@@ -571,7 +615,7 @@ button {
   padding-top: 15px;
   margin-top: 30px;
   font-size: 14px;
-  color: var(--t2-color);
+  color: var(--text-color);
 }
 
 
@@ -789,12 +833,21 @@ button {
 }
 
 @media (max-width: 480px) {
-
+  .tb-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+  }
   .navbar {
     padding: 12px 15px;
   }
 
   .menu-toggle {
+    display: flex;
+    margin-top: 20px;
     right: 15px;
   }
 
@@ -834,9 +887,8 @@ button {
     font-size: 1rem;
   }
 
-  #experience .st-row > p {
+  #experience .st-row p {
     font-size: 0.9rem;
-    color: var(--ftc-color);
   }
 
   #experience .exp-cont > p {
@@ -873,9 +925,8 @@ button {
     font-size: 1rem;
   }
 
-  #career .st-row-c > p {
-    font-size: 0.9rem;
-    color: var(--ftc-color);
+  #career .st-row-c p {
+    font-size: small;
   }
 
   #footer {
