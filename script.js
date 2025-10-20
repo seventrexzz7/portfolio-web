@@ -4,26 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.n-link');
-    const nCont = document.querySelector('.n-cont');
     const menuLinks = document.querySelectorAll('.n-link a');
 
     const langBtn = document.getElementById("langBtn");
     let currentLang = "en";
 
-    const themeBtn = document.getElementById("themeBtn");
     const cssL = document.getElementById("cssL");
     const htmlL = document.getElementById("htmlL");
     const jsL = document.getElementById("jsL");
     const reactL = document.getElementById("reactL");
-    const linkL = document.getElementById("linkL");
     const nstlL = document.getElementById("nstlL");
     const gitL = document.getElementById("gitL");
     const linkedinL = document.getElementById("linkedinL");
     const translateL = document.getElementById("translateL");
+    const natL = document.getElementById("natL");
 
 
     const header = document.getElementById('mainHeader');
-    const hero = document.getElementById('hero');
     const tab = document.getElementById('nav-tab');
 
     let isCollapsed = false;
@@ -128,17 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
             reactL.src = "./components/assets/react-icon-w.png";
             htmlL.src = "./components/assets/html-icon-w.png";
             jsL.src = "./components/assets/js-logo-w.png";
-            linkL.src = "./components/assets/arrow-icon-w.png";
             nstlL.src = "./components/assets/nstl-logo-w.png";
             linkedinL.src = "./components/assets/linkedin-icon-w.png";
             gitL.src = "./components/assets/git-logo-w.png";
             translateL.src = "./components/assets/translate-icon.png";
+            natL.src = "./components/assets/nataliachen-logo-w.png";
 
             document.querySelectorAll(".careerL").forEach(img => {
                 img.src = "./components/assets/career-icon-w.png";
             });
             document.querySelectorAll(".logoImg").forEach(img => {
                 img.src = "./components/assets/logo-b.png";
+            });
+            document.querySelectorAll(".linkL").forEach(img => {
+                img.src = "./components/assets/arrow-icon-w.png";
             });
 
             localStorage.setItem("theme", "light");
@@ -150,17 +150,20 @@ document.addEventListener('DOMContentLoaded', () => {
             reactL.src = "./components/assets/react-icon.png";
             htmlL.src = "./components/assets/html-icon.png";
             jsL.src = "./components/assets/js-logo.png";
-            linkL.src = "./components/assets/arrow-icon.png";
             nstlL.src = "./components/assets/nstl-logo.png";
             linkedinL.src = "./components/assets/linkedin-icon.png";
             gitL.src = "./components/assets/git-logo.png";
             translateL.src = "./components/assets/translate-icon-b.png";
+            natL.src = "./components/assets/nataliachen-logo.png";
 
             document.querySelectorAll(".careerL").forEach(img => {
                 img.src = "./components/assets/career-icon.png";
             });
             document.querySelectorAll(".logoImg").forEach(img => {
                 img.src = "./components/assets/logo-w.png";
+            });
+            document.querySelectorAll(".linkL").forEach(img => {
+                img.src = "./components/assets/arrow-icon.png";
             });
 
             localStorage.setItem("theme", "dark");
