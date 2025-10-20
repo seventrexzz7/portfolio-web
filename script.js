@@ -143,25 +143,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isLight) {
                 document.body.classList.add("light-mode");
 
-                if (cssL) cssL.src = "/components/assets/css-logo-w.png";
-                if (reactL) reactL.src = "/components/assets/react-icon-w.png";
-                if (htmlL) htmlL.src = "/components/assets/html-icon-w.png";
-                if (jsL) jsL.src = "/components/assets/js-logo-w.png";
-                if (nstlL) nstlL.src = "/components/assets/nstl-logo-w.png";
-                if (linkedinL) linkedinL.src = "/components/assets/linkedin-icon-w.png";
-                if (gitL) gitL.src = "/components/assets/git-logo-w.png";
-                if (translateL) translateL.src = "/components/assets/translate-icon.png";
-                if (natL) natL.src = "/components/assets/nataliachen-logo-w.png";
-                if (coffeL) coffeL.src = "/components/assets/coffee.png";
+                if (cssL) cssL.src = "components/assets/css-logo-w.png";
+                if (reactL) reactL.src = "components/assets/react-icon-w.png";
+                if (htmlL) htmlL.src = "components/assets/html-icon-w.png";
+                if (jsL) jsL.src = "components/assets/js-logo-w.png";
+                if (nstlL) nstlL.src = "components/assets/nstl-logo-w.png";
+                if (linkedinL) linkedinL.src = "components/assets/linkedin-icon-w.png";
+                if (gitL) gitL.src = "components/assets/git-logo-w.png";
+                if (translateL) translateL.src = "components/assets/translate-icon.png";
+                if (natL) natL.src = "components/assets/nataliachen-logo-w.png";
+                if (coffeL) coffeL.src = "components/assets/coffee.png";
 
                 document.querySelectorAll(".careerL").forEach(img => {
-                    img.src = "/components/assets/career-icon-w.png";
+                    img.src = "components/assets/career-icon-w.png";
                 });
                 document.querySelectorAll(".logoImg").forEach(img => {
-                    img.src = "/components/assets/logo-b.png";
+                    img.src = "components/assets/logo-b.png";
                 });
                 document.querySelectorAll(".linkL").forEach(img => {
-                    img.src = "/components/assets/arrow-icon-w.png";
+                    img.src = "components/assets/arrow-icon-w.png";
                 });
 
                 localStorage.setItem("theme", "light");
@@ -169,25 +169,25 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 document.body.classList.remove("light-mode");
 
-                if (cssL) cssL.src = "/components/assets/css-logo.png";
-                if (reactL) reactL.src = "/components/assets/react-icon.png";
-                if (htmlL) htmlL.src = "/components/assets/html-icon.png";
-                if (jsL) jsL.src = "/components/assets/js-logo.png";
-                if (nstlL) nstlL.src = "/components/assets/nstl-logo.png";
-                if (linkedinL) linkedinL.src = "/components/assets/linkedin-icon.png";
-                if (gitL) gitL.src = "/components/assets/git-logo.png";
-                if (translateL) translateL.src = "/components/assets/translate-icon-b.png";
-                if (natL) natL.src = "/components/assets/nataliachen-logo.png";
-                if (coffeL) coffeL.src = "/components/assets/coffee-b.png";
+                if (cssL) cssL.src = "components/assets/css-logo.png";
+                if (reactL) reactL.src = "components/assets/react-icon.png";
+                if (htmlL) htmlL.src = "components/assets/html-icon.png";
+                if (jsL) jsL.src = "components/assets/js-logo.png";
+                if (nstlL) nstlL.src = "components/assets/nstl-logo.png";
+                if (linkedinL) linkedinL.src = "components/assets/linkedin-icon.png";
+                if (gitL) gitL.src = "components/assets/git-logo.png";
+                if (translateL) translateL.src = "components/assets/translate-icon-b.png";
+                if (natL) natL.src = "components/assets/nataliachen-logo.png";
+                if (coffeL) coffeL.src = "components/assets/coffee-b.png";
 
                 document.querySelectorAll(".careerL").forEach(img => {
-                    img.src = "/components/assets/career-icon.png";
+                    img.src = "components/assets/career-icon.png";
                 });
                 document.querySelectorAll(".logoImg").forEach(img => {
-                    img.src = "/components/assets/logo-w.png";
+                    img.src = "components/assets/logo-w.png";
                 });
                 document.querySelectorAll(".linkL").forEach(img => {
-                    img.src = "/components/assets/arrow-icon.png";
+                    img.src = "components/assets/arrow-icon.png";
                 });
 
                 localStorage.setItem("theme", "dark");
