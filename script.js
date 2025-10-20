@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkedinL = document.getElementById("linkedinL");
     const translateL = document.getElementById("translateL");
     const natL = document.getElementById("natL");
+    const coffeL = document.getElementById("coffeL");
 
 
     const header = document.getElementById('mainHeader');
@@ -27,161 +28,185 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let lastScrollY = 0;
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
+    // --- HEADER SCROLL EFFECT --- //
 
-        if (currentScroll > lastScrollY && currentScroll > 50 && !isCollapsed) {
-            header.classList.add('collapsed');
-            isCollapsed = true;
-        }
+    if (header && tab) {
 
-        if ((currentScroll < lastScrollY || currentScroll <= 0) && isCollapsed) {
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > lastScrollY && currentScroll > 50 && !isCollapsed) {
+                header.classList.add('collapsed');
+                isCollapsed = true;
+            }
+
+            if ((currentScroll < lastScrollY || currentScroll <= 0) && isCollapsed) {
+                header.classList.remove('collapsed');
+                isCollapsed = false;
+            }
+
+            lastScrollY = currentScroll;
+
+            if (isCollapsed) {
+                tab.style.display = 'flex';
+            } else {
+                tab.style.display = 'none';
+            }
+        });
+
+        tab.addEventListener('click', () => {
             header.classList.remove('collapsed');
             isCollapsed = false;
-        }
-
-        lastScrollY = currentScroll;
-
-        if (isCollapsed) {
-            tab.style.display = 'flex';
-        } else {
             tab.style.display = 'none';
-        }
-    });
-
-    tab.addEventListener('click', () => {
-        header.classList.remove('collapsed');
-        isCollapsed = false;
-        tab.style.display = 'none';
-    });
-
-    function ajustarMenu() {
-        const headerHeight = document.getElementById('mainHeader').offsetHeight;
-        navLinks.style.top = `${headerHeight}px`;
-        navLinks.style.height = `${window.innerHeight - headerHeight}px`;
+        });
     }
 
-    // Abrir/cerrar menú
-    toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        toggle.classList.toggle('open');  // animación hamburguesa
-        ajustarMenu();
-    });
+    // --- HAMBURGUER MENU --- //
 
-    // Ajustar al redimensionar la ventana
-    window.addEventListener('resize', () => {
-         if (window.innerWidth > 768) {
-        navLinks.classList.remove('active');
-        toggle.classList.remove('open');
-
-        // Limpiar los estilos inline aplicados por JS
-        navLinks.style.top = '';
-        navLinks.style.height = '';
-        }else if (navLinks.classList.contains('active')) {
-            ajustarMenu();
+    if (toggle && navLinks){
+        function ajustarMenu() {
+            const headerHeight = document.getElementById('mainHeader').offsetHeight;
+            navLinks.style.top = `${headerHeight}px`;
+            navLinks.style.height = `${window.innerHeight - headerHeight}px`;
         }
-    });
+        
+        // Abrir/cerrar menú
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            toggle.classList.toggle('open');  // animación hamburguesa
+            ajustarMenu();
+        });
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            // Cierra el menú
+        // Ajustar al redimensionar la ventana
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
             navLinks.classList.remove('active');
             toggle.classList.remove('open');
-        });
-    });
 
-    contactBtn.addEventListener("click", () =>{
-        document.querySelector("#contact").scrollIntoView();
-    });
-
-    cvBtn.addEventListener("click", ()=> {
-        window.open("", "_blank");
-    })
-
-    langBtn.addEventListener("click", () => {
-        const elements = document.querySelectorAll("[data-es]");
-
-        elements.forEach(el => {
-            if (!el.getAttribute("data-en")) {
-            el.setAttribute("data-en", el.innerHTML);
-            }
-
-
-            if (currentLang === "en") {
-            el.innerHTML = el.getAttribute("data-es");
-            } else {
-            el.innerHTML = el.getAttribute("data-en");
+            // Limpiar los estilos inline aplicados por JS
+            navLinks.style.top = '';
+            navLinks.style.height = '';
+            }else if (navLinks.classList.contains('active')) {
+                ajustarMenu();
             }
         });
-
-        currentLang = currentLang === "en" ? "es" : "en";
-    });
-
-    function applyTheme(isLight) {
-        if (isLight) {
-            document.body.classList.add("light-mode");
-
-            cssL.src = "./components/assets/css-logo-w.png";
-            reactL.src = "./components/assets/react-icon-w.png";
-            htmlL.src = "./components/assets/html-icon-w.png";
-            jsL.src = "./components/assets/js-logo-w.png";
-            nstlL.src = "./components/assets/nstl-logo-w.png";
-            linkedinL.src = "./components/assets/linkedin-icon-w.png";
-            gitL.src = "./components/assets/git-logo-w.png";
-            translateL.src = "./components/assets/translate-icon.png";
-            natL.src = "./components/assets/nataliachen-logo-w.png";
-
-            document.querySelectorAll(".careerL").forEach(img => {
-                img.src = "./components/assets/career-icon-w.png";
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Cierra el menú
+                navLinks.classList.remove('active');
+                toggle.classList.remove('open');
             });
-            document.querySelectorAll(".logoImg").forEach(img => {
-                img.src = "./components/assets/logo-b.png";
-            });
-            document.querySelectorAll(".linkL").forEach(img => {
-                img.src = "./components/assets/arrow-icon-w.png";
-            });
-
-            localStorage.setItem("theme", "light");
-
-        } else {
-            document.body.classList.remove("light-mode");
-
-            cssL.src = "./components/assets/css-logo.png";
-            reactL.src = "./components/assets/react-icon.png";
-            htmlL.src = "./components/assets/html-icon.png";
-            jsL.src = "./components/assets/js-logo.png";
-            nstlL.src = "./components/assets/nstl-logo.png";
-            linkedinL.src = "./components/assets/linkedin-icon.png";
-            gitL.src = "./components/assets/git-logo.png";
-            translateL.src = "./components/assets/translate-icon-b.png";
-            natL.src = "./components/assets/nataliachen-logo.png";
-
-            document.querySelectorAll(".careerL").forEach(img => {
-                img.src = "./components/assets/career-icon.png";
-            });
-            document.querySelectorAll(".logoImg").forEach(img => {
-                img.src = "./components/assets/logo-w.png";
-            });
-            document.querySelectorAll(".linkL").forEach(img => {
-                img.src = "./components/assets/arrow-icon.png";
-            });
-
-            localStorage.setItem("theme", "dark");
-        }
+        });
     }
 
-    themeToggle.addEventListener("change", () => {
-        applyTheme(themeToggle.checked);
-    });
+    // --- BUTTONS --- //
 
-    window.addEventListener("DOMContentLoaded", () => {
-        const saved = localStorage.getItem("theme");
-        if (saved === "light") {
-            themeToggle.checked = true;
-            applyTheme(true);
-        } else {
-            themeToggle.checked = false;
-            applyTheme(false);
+    if (contactBtn){
+        contactBtn.addEventListener("click", () =>{
+            document.querySelector("#footer").scrollIntoView();
+        });
+    }
+
+    if (cvBtn){
+        cvBtn.addEventListener("click", ()=> {
+            window.open("", "_blank");
+        })
+    }
+
+    // --- TRANSLATE --- //
+
+    if (langBtn){
+        langBtn.addEventListener("click", () => {
+            const elements = document.querySelectorAll("[data-es]");
+
+            elements.forEach(el => {
+                if (!el.getAttribute("data-en")) {
+                el.setAttribute("data-en", el.innerHTML);
+                }
+
+
+                if (currentLang === "en") {
+                el.innerHTML = el.getAttribute("data-es");
+                } else {
+                el.innerHTML = el.getAttribute("data-en");
+                }
+            });
+
+            currentLang = currentLang === "en" ? "es" : "en";
+        });
+    }
+
+    // --- THEME LIGHT / THEME DARK --- //
+
+    if (themeToggle){
+        function applyTheme(isLight) {
+            if (isLight) {
+                document.body.classList.add("light-mode");
+
+                if (cssL) cssL.src = "/components/assets/css-logo-w.png";
+                if (reactL) reactL.src = "/components/assets/react-icon-w.png";
+                if (htmlL) htmlL.src = "/components/assets/html-icon-w.png";
+                if (jsL) jsL.src = "/components/assets/js-logo-w.png";
+                if (nstlL) nstlL.src = "/components/assets/nstl-logo-w.png";
+                if (linkedinL) linkedinL.src = "/components/assets/linkedin-icon-w.png";
+                if (gitL) gitL.src = "/components/assets/git-logo-w.png";
+                if (translateL) translateL.src = "/components/assets/translate-icon.png";
+                if (natL) natL.src = "/components/assets/nataliachen-logo-w.png";
+                if (coffeL) coffeL.src = "/components/assets/coffee.png";
+
+                document.querySelectorAll(".careerL").forEach(img => {
+                    img.src = "/components/assets/career-icon-w.png";
+                });
+                document.querySelectorAll(".logoImg").forEach(img => {
+                    img.src = "/components/assets/logo-b.png";
+                });
+                document.querySelectorAll(".linkL").forEach(img => {
+                    img.src = "/components/assets/arrow-icon-w.png";
+                });
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+                document.body.classList.remove("light-mode");
+
+                if (cssL) cssL.src = "/components/assets/css-logo.png";
+                if (reactL) reactL.src = "/components/assets/react-icon.png";
+                if (htmlL) htmlL.src = "/components/assets/html-icon.png";
+                if (jsL) jsL.src = "/components/assets/js-logo.png";
+                if (nstlL) nstlL.src = "/components/assets/nstl-logo.png";
+                if (linkedinL) linkedinL.src = "/components/assets/linkedin-icon.png";
+                if (gitL) gitL.src = "/components/assets/git-logo.png";
+                if (translateL) translateL.src = "/components/assets/translate-icon-b.png";
+                if (natL) natL.src = "/components/assets/nataliachen-logo.png";
+                if (coffeL) coffeL.src = "/components/assets/coffee-b.png";
+
+                document.querySelectorAll(".careerL").forEach(img => {
+                    img.src = "/components/assets/career-icon.png";
+                });
+                document.querySelectorAll(".logoImg").forEach(img => {
+                    img.src = "/components/assets/logo-w.png";
+                });
+                document.querySelectorAll(".linkL").forEach(img => {
+                    img.src = "/components/assets/arrow-icon.png";
+                });
+
+                localStorage.setItem("theme", "dark");
+            }
         }
-    });
+
+        themeToggle.addEventListener("change", () => {
+            applyTheme(themeToggle.checked);
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light") {
+                themeToggle.checked = true;
+                applyTheme(true);
+            } else {
+                themeToggle.checked = false;
+                applyTheme(false);
+            }
+        });
+    }
 })
