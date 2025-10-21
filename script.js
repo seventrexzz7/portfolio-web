@@ -69,21 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.style.top = `${headerHeight}px`;
             navLinks.style.height = `${window.innerHeight - headerHeight}px`;
         }
-        
-        // Abrir/cerrar menú
+
         toggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            toggle.classList.toggle('open');  // animación hamburguesa
+            toggle.classList.toggle('open');
             ajustarMenu();
         });
 
-        // Ajustar al redimensionar la ventana
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
             navLinks.classList.remove('active');
             toggle.classList.remove('open');
 
-            // Limpiar los estilos inline aplicados por JS
             navLinks.style.top = '';
             navLinks.style.height = '';
             }else if (navLinks.classList.contains('active')) {
@@ -92,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
-                // Cierra el menú
                 navLinks.classList.remove('active');
                 toggle.classList.remove('open');
             });

@@ -19,9 +19,9 @@ html {
   scroll-behavior: smooth;
 }
 html, body {
-    overflow-x: hidden;
-    background-color: var(--bg-color);
-    transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body{
@@ -893,8 +893,8 @@ button {
 
   .n-link {
     position: fixed;
-    right: -100%;         /* fuera de la pantalla */
-    top: 0;                /* JS ajustará top dinámicamente */
+    right: -100%;
+    top: 0;
     width: 100%;
     flex-direction: column;
     background-color: var(--bg2-color);
